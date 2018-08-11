@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RegisterDB" Class="RegisterDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\RegisterDB.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="CourseMo.Properties.Settings" SettingsPropertyName="RegisterDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Courses" Member="Courses">
+    <Type Name="Course">
+      <Column Name="CRN" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Abbrev" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="CID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Semester" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="Term" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CType" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="CDay" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="CTime" Type="System.String" DbType="NVarChar(64)" CanBeNull="true" />
+      <Column Name="CSize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Course_Registered" Member="Registereds" ThisKey="CRN" OtherKey="CRN" Type="Registered" />
+      <Association Name="Course_Waitlist" Member="Waitlists" ThisKey="CRN" OtherKey="CRN" Type="Waitlist" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Registered" Member="Registereds">
+    <Type Name="Registered">
+      <Column Name="RIN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CRN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NetID" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="Course_Registered" Member="Course" ThisKey="CRN" OtherKey="CRN" Type="Course" IsForeignKey="true" />
+      <Association Name="Student_Registered" Member="Student" ThisKey="NetID" OtherKey="NetID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Students" Member="Students">
+    <Type Name="Student">
+      <Column Name="NetID" Type="System.String" DbType="NVarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="Student_Registered" Member="Registereds" ThisKey="NetID" OtherKey="NetID" Type="Registered" />
+      <Association Name="Student_Waitlist" Member="Waitlists" ThisKey="NetID" OtherKey="NetID" Type="Waitlist" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Waitlist" Member="Waitlists">
+    <Type Name="Waitlist">
+      <Column Name="WID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CRN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NetID" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Association Name="Course_Waitlist" Member="Course" ThisKey="CRN" OtherKey="CRN" Type="Course" IsForeignKey="true" />
+      <Association Name="Student_Waitlist" Member="Student" ThisKey="NetID" OtherKey="NetID" Type="Student" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
