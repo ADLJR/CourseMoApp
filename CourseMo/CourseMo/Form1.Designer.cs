@@ -53,6 +53,10 @@
       this.classTextBox = new System.Windows.Forms.TextBox();
       this.enrollTextBox = new System.Windows.Forms.TextBox();
       this.waitTextBox = new System.Windows.Forms.TextBox();
+      this.label11 = new System.Windows.Forms.Label();
+      this.label12 = new System.Windows.Forms.Label();
+      this.enrollListBox = new System.Windows.Forms.ListBox();
+      this.waitListBox = new System.Windows.Forms.ListBox();
       this.menuStrip1.SuspendLayout();
       this.SuspendLayout();
       // 
@@ -146,7 +150,7 @@
       // label4
       // 
       this.label4.AutoSize = true;
-      this.label4.Location = new System.Drawing.Point(1441, 88);
+      this.label4.Location = new System.Drawing.Point(1413, 88);
       this.label4.Name = "label4";
       this.label4.Size = new System.Drawing.Size(92, 32);
       this.label4.TabIndex = 6;
@@ -164,7 +168,7 @@
       // label6
       // 
       this.label6.AutoSize = true;
-      this.label6.Location = new System.Drawing.Point(1441, 228);
+      this.label6.Location = new System.Drawing.Point(1851, 88);
       this.label6.Name = "label6";
       this.label6.Size = new System.Drawing.Size(73, 32);
       this.label6.TabIndex = 8;
@@ -173,7 +177,7 @@
       // label7
       // 
       this.label7.AutoSize = true;
-      this.label7.Location = new System.Drawing.Point(1198, 228);
+      this.label7.Location = new System.Drawing.Point(1851, 228);
       this.label7.Name = "label7";
       this.label7.Size = new System.Drawing.Size(81, 32);
       this.label7.TabIndex = 9;
@@ -182,7 +186,7 @@
       // label8
       // 
       this.label8.AutoSize = true;
-      this.label8.Location = new System.Drawing.Point(1638, 228);
+      this.label8.Location = new System.Drawing.Point(1413, 228);
       this.label8.Name = "label8";
       this.label8.Size = new System.Drawing.Size(177, 32);
       this.label8.TabIndex = 10;
@@ -191,16 +195,16 @@
       // label9
       // 
       this.label9.AutoSize = true;
-      this.label9.Location = new System.Drawing.Point(1201, 374);
+      this.label9.Location = new System.Drawing.Point(1634, 228);
       this.label9.Name = "label9";
-      this.label9.Size = new System.Drawing.Size(313, 32);
+      this.label9.Size = new System.Drawing.Size(167, 32);
       this.label9.TabIndex = 11;
-      this.label9.Text = "ENROLLMENT COUNT";
+      this.label9.Text = "ENROLLED";
       // 
       // label10
       // 
       this.label10.AutoSize = true;
-      this.label10.Location = new System.Drawing.Point(1638, 374);
+      this.label10.Location = new System.Drawing.Point(1198, 228);
       this.label10.Name = "label10";
       this.label10.Size = new System.Drawing.Size(143, 32);
       this.label10.TabIndex = 12;
@@ -215,9 +219,9 @@
       // 
       // yearTextBox
       // 
-      this.yearTextBox.Location = new System.Drawing.Point(1447, 140);
+      this.yearTextBox.Location = new System.Drawing.Point(1419, 140);
       this.yearTextBox.Name = "yearTextBox";
-      this.yearTextBox.Size = new System.Drawing.Size(119, 38);
+      this.yearTextBox.Size = new System.Drawing.Size(164, 38);
       this.yearTextBox.TabIndex = 14;
       // 
       // typeTextBox
@@ -229,38 +233,74 @@
       // 
       // dayTextBox
       // 
-      this.dayTextBox.Location = new System.Drawing.Point(1447, 276);
+      this.dayTextBox.Location = new System.Drawing.Point(1857, 140);
       this.dayTextBox.Name = "dayTextBox";
-      this.dayTextBox.Size = new System.Drawing.Size(119, 38);
+      this.dayTextBox.Size = new System.Drawing.Size(164, 38);
       this.dayTextBox.TabIndex = 16;
       // 
       // timeTextBox
       // 
-      this.timeTextBox.Location = new System.Drawing.Point(1204, 276);
+      this.timeTextBox.Location = new System.Drawing.Point(1857, 276);
       this.timeTextBox.Name = "timeTextBox";
       this.timeTextBox.Size = new System.Drawing.Size(164, 38);
       this.timeTextBox.TabIndex = 17;
       // 
       // classTextBox
       // 
-      this.classTextBox.Location = new System.Drawing.Point(1644, 276);
+      this.classTextBox.Location = new System.Drawing.Point(1425, 276);
       this.classTextBox.Name = "classTextBox";
       this.classTextBox.Size = new System.Drawing.Size(164, 38);
       this.classTextBox.TabIndex = 18;
       // 
       // enrollTextBox
       // 
-      this.enrollTextBox.Location = new System.Drawing.Point(1207, 419);
+      this.enrollTextBox.Location = new System.Drawing.Point(1204, 276);
       this.enrollTextBox.Name = "enrollTextBox";
       this.enrollTextBox.Size = new System.Drawing.Size(164, 38);
       this.enrollTextBox.TabIndex = 19;
       // 
       // waitTextBox
       // 
-      this.waitTextBox.Location = new System.Drawing.Point(1644, 419);
+      this.waitTextBox.Location = new System.Drawing.Point(1640, 276);
       this.waitTextBox.Name = "waitTextBox";
       this.waitTextBox.Size = new System.Drawing.Size(164, 38);
       this.waitTextBox.TabIndex = 20;
+      // 
+      // label11
+      // 
+      this.label11.AutoSize = true;
+      this.label11.Location = new System.Drawing.Point(1198, 414);
+      this.label11.Name = "label11";
+      this.label11.Size = new System.Drawing.Size(325, 32);
+      this.label11.TabIndex = 21;
+      this.label11.Text = "STUDENTS ENROLLED";
+      // 
+      // label12
+      // 
+      this.label12.AutoSize = true;
+      this.label12.Location = new System.Drawing.Point(1638, 414);
+      this.label12.Name = "label12";
+      this.label12.Size = new System.Drawing.Size(350, 32);
+      this.label12.TabIndex = 22;
+      this.label12.Text = "STUDENTS ON WAITLIST";
+      // 
+      // enrollListBox
+      // 
+      this.enrollListBox.FormattingEnabled = true;
+      this.enrollListBox.ItemHeight = 31;
+      this.enrollListBox.Location = new System.Drawing.Point(1209, 479);
+      this.enrollListBox.Name = "enrollListBox";
+      this.enrollListBox.Size = new System.Drawing.Size(380, 376);
+      this.enrollListBox.TabIndex = 23;
+      // 
+      // waitListBox
+      // 
+      this.waitListBox.FormattingEnabled = true;
+      this.waitListBox.ItemHeight = 31;
+      this.waitListBox.Location = new System.Drawing.Point(1640, 479);
+      this.waitListBox.Name = "waitListBox";
+      this.waitListBox.Size = new System.Drawing.Size(381, 376);
+      this.waitListBox.TabIndex = 24;
       // 
       // Form1
       // 
@@ -268,6 +308,10 @@
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.AutoSize = true;
       this.ClientSize = new System.Drawing.Size(2370, 1096);
+      this.Controls.Add(this.waitListBox);
+      this.Controls.Add(this.enrollListBox);
+      this.Controls.Add(this.label12);
+      this.Controls.Add(this.label11);
       this.Controls.Add(this.waitTextBox);
       this.Controls.Add(this.enrollTextBox);
       this.Controls.Add(this.classTextBox);
@@ -326,6 +370,10 @@
     private System.Windows.Forms.TextBox classTextBox;
     private System.Windows.Forms.TextBox enrollTextBox;
     private System.Windows.Forms.TextBox waitTextBox;
+    private System.Windows.Forms.Label label11;
+    private System.Windows.Forms.Label label12;
+    private System.Windows.Forms.ListBox enrollListBox;
+    private System.Windows.Forms.ListBox waitListBox;
   }
 }
 
